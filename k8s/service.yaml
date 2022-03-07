@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      name: http-svc
+      port: 3000
+  # Seletor utilizado para o SERVICE identificar e enviar o trafego para os PODs
+  selector:
+    app: server
